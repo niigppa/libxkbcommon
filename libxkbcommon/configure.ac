@@ -41,13 +41,13 @@ AC_USE_SYSTEM_EXTENSIONS
 LT_INIT
 
 # Add xorg-macros stuff
-m4_ifndef([XORG_MACROS_VERSION],
-          [m4_fatal([must install xorg-macros 1.16 or later before running autoconf/autogen])])
-XORG_MACROS_VERSION(1.16)
-XORG_DEFAULT_OPTIONS
-XORG_MEMORY_CHECK_FLAGS
-XORG_ENABLE_DOCS
-XORG_WITH_DOXYGEN
+#m4_ifndef([XORG_MACROS_VERSION],
+#          [m4_fatal([must install xorg-macros 1.16 or later before running autoconf/autogen])])
+#XORG_MACROS_VERSION(1.16)
+#XORG_DEFAULT_OPTIONS
+#XORG_MEMORY_CHECK_FLAGS
+#XORG_ENABLE_DOCS
+#XORG_WITH_DOXYGEN
 
 # Needed in older Automakes for subdir-objects
 AM_PROG_CC_C_O
@@ -82,7 +82,7 @@ AC_CHECK_FUNCS([eaccess euidaccess mmap])
 AC_CHECK_HEADER([linux/input.h])
 AM_CONDITIONAL(BUILD_LINUX_TESTS, [test "x$ac_cv_header_linux_input_h" = xyes])
 
-XORG_TESTSET_CFLAG([BASE_CFLAGS], [-fvisibility=hidden])
+#XORG_TESTSET_CFLAG([BASE_CFLAGS], [-fvisibility=hidden])
 
 # Define a configuration option for the XKB config root
 xkb_base=`$PKG_CONFIG --variable=xkb_base xkeyboard-config`

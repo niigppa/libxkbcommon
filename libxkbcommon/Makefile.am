@@ -83,29 +83,29 @@ src/xkbcomp/parser.h: $(top_builddir)/src/$(am__dirstamp) $(top_builddir)/src/xk
 
 # Documentation
 
-if ENABLE_DOCS
-if HAVE_DOXYGEN
-doc: doc/stamp-doxygen
-clean-doc: clean-doxygen
-all-local:: doc
-clean-local:: clean-doc
-
-doc/stamp-doxygen: $(top_srcdir)/xkbcommon/*.h
-	$(AM_V_GEN)$(DOXYGEN) doc/Doxyfile
-	touch $@
-
-clean-doxygen:
-	rm -rf doc/html doc/stamp-doxygen
-
-install-data-local:: doc
-	$(MKDIR_P) $(DESTDIR)$(htmldir)
-	$(INSTALL_DATA) doc/html/* $(DESTDIR)$(htmldir)
-
-uninstall-local::
-	rm -rf $(DESTDIR)$(htmldir)
-
-endif HAVE_DOXYGEN
-endif ENABLE_DOCS
+#if ENABLE_DOCS
+#if HAVE_DOXYGEN
+#doc: doc/stamp-doxygen
+#clean-doc: clean-doxygen
+#all-local:: doc
+#clean-local:: clean-doc
+#
+#doc/stamp-doxygen: $(top_srcdir)/xkbcommon/*.h
+#	$(AM_V_GEN)$(DOXYGEN) doc/Doxyfile
+#	touch $@
+#
+#clean-doxygen:
+#	rm -rf doc/html doc/stamp-doxygen
+#
+#install-data-local:: doc
+#	$(MKDIR_P) $(DESTDIR)$(htmldir)
+#	$(INSTALL_DATA) doc/html/* $(DESTDIR)$(htmldir)
+#
+#uninstall-local::
+#	rm -rf $(DESTDIR)$(htmldir)
+#
+#endif HAVE_DOXYGEN
+#endif ENABLE_DOCS
 
 # Tests
 
